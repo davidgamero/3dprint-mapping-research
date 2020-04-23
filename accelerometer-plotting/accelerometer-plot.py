@@ -169,6 +169,8 @@ def plot_integrate(data_series):
 
     fig = plt.figure()
     plt.scatter(xline, yline, color='b')
+    plt.title('Calculated first-layer motion from accelerometer data')
+
     plt.show()
 
     return

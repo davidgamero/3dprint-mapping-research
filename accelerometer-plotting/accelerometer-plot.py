@@ -213,8 +213,8 @@ data_series = data_points_to_series(data_points)
 
 center_data_series(data_series)
 #remove_outliers_data_series(data_series, 1)
-# plot_raw_accelerometer_data(data)
-plot_integrate(data_series)
+# plot_raw_accelerometer_data3d(data_points)
+#plot_integrate(data_series)
 
 plt.show()
 print('done')

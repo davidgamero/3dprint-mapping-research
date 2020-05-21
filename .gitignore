@@ -1,1 +1,4 @@
 accelerometer-env
+env
+data/audio
+.vscode

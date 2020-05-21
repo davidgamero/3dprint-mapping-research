@@ -5,7 +5,7 @@ import sys
 from mpl_toolkits import mplot3d
 import datetime
 import dateutil
-from mayavi import mlab
+#from mayavi import mlab
 
 
 def parse_accelerometer_data_file_line(line):
@@ -152,7 +152,7 @@ def plot_integrate(data_series):
     x, y, z = 0, 0, 0
     vx, vy, vz = 0.0, 0.0, 0.0
 
-    for i in range(3500):
+    for i in range(len(data_series['x'])):
         dt = data_series['t'][i+1] - data_series['t'][i]
 
         vx += data_series['x'][i]
@@ -207,14 +207,14 @@ def plot_integrate3d(data):
 
 
 data_points = load_data_from_file(
-    'accelerometer-plotting/accelerometer20200420-1.txt')
+    '../data/accelerometer/accelerometer20200514-1.txt')
 
 data_series = data_points_to_series(data_points)
 
 center_data_series(data_series)
-#remove_outliers_data_series(data_series, 1)
+remove_outliers_data_series(data_series, 1)
 # plot_raw_accelerometer_data3d(data_points)
-#plot_integrate(data_series)
+plot_integrate(data_series)
 
 plt.show()
 print('done')
